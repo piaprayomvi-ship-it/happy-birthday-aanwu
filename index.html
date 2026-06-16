@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dear cute sisterr Aanwuu😍😍🥰</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(135deg, #ffb6c1, #add8e6);
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* floating hearts background */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall linear infinite;
+  color: rgba(255,255,255,0.8);
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 32px;
+  text-shadow: 2px 2px 10px black;
+}
+
+.message {
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+.cake {
+  font-size: 50px;
+  animation: float 2s infinite ease-in-out;
+  margin: 20px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+#countdown {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 15px black;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#surprise {
+  margin-top: 10px;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday Dear Pyaru💖🎉</h1>
+
+<div class="message">
+Dear Aanwu,<br><br>
+You have the most beautiful smile I’ve ever known 🌸<br>
+Wishing you endless happiness, love, and peace 💖<br>
+May your life shine brighter than stars ✨
+</div>
+
+<div class="cake">🎂🎂🎂</div>
+
+<h2 id="countdown"></h2>
+
+<!-- IMAGE SECTION (replace files with your photos) -->
+<div class="gallery">
+  <img src="image1.jpg">
+  <img src="image2.jpg">
+  <img src="image3.jpg">
+  <img src="image4.jpg">
+</div>
+
+<button onclick="showSurprise()">🎁 Click for Surprise</button>
+<div id="surprise"></div>
+
+<script>
+// ===== COUNTDOWN =====
+let birthday = new Date("June 17, 2026 00:00:00").getTime();
+
+setInterval(function () {
+  let now = new Date().getTime();
+  let distance = birthday - now;
+
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  if (distance > 0) {
+    document.getElementById("countdown").innerHTML =
+      "⏳ Only " + days + " days left for Aanwu's Birthday 💖";
+  } else {
+    document.getElementById("countdown").innerHTML =
+      "🎉 It's Aanwu's Special Day Today 🎉";
+  }
+}, 1000);
+
+// ===== SURPRISE BUTTON =====
+function showSurprise() {
+  document.getElementById("surprise").innerHTML =
+    "💖 Dear Aanwu, you are loved more than words can ever explain 💖 Many many happy returns of the day pyaruu🥰🥳 hajurle sochiseko sabei ramro kuraharu pura hoss🤞 No matter where life takes us, I am and will always proud to be the brother of my beautiful sister🫣💗 keep smiling always and forever😝 hajur ko aankha bata kahile aansu ka thopa na jharun kehi kadam aansu jhare pani ti sadhei khushi ka aansu rahun😘😇🤞 best of luck in your studies keep pursuing your dreams🍀 am always there for youu🥰🥳 you've got the prettiest smiles so keep on smiling😊😝 malai testo lekhna ta aaudeina teini mero sano prayas once again happy birthday to youu my cute sisterr pyaruuu🥰🥳 ";
+}
+
+// ===== FLOATING HEARTS =====
+function createHeart() {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "🥰";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
